@@ -1,0 +1,37 @@
+<p>caculator works!</p>
+<br/>
+<br/>
+<div>
+  <div>
+    <label>Number 1:</label>
+    <input type="number" class="form-input"
+           [value]="first"
+           (change)="onFirstChange($event.target.valueOf( ))"/>
+  </div>
+  <br/>
+  <div>
+    <label>Calculate: </label>
+    <select class="form-input"
+            [value]="operator"
+            (change)="onSelectChange($event.target.valueOf())">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+  </div>
+  <br/>
+  <div>
+    <label>Number 2:</label>
+    <input type="number" class="form-input"
+           [value]="second"
+           (change)="onSecondChange($event.target.valueOf())"/>
+  </div>
+  <br/>
+  <div>
+    <button class="form-input" (click)="calculate()">Caculator</button>
+  </div>
+  <div class="output">
+    {{output}}
+  </div>
+</div>
